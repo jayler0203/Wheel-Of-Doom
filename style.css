@@ -1,0 +1,48 @@
+:root{
+    --color-background:#00063D;
+    --color-button:#00A3FF;
+}
+body{
+    background: var(--color-background);
+
+}
+.titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.tituloPacman{
+ width: 300px;
+}
+.killer{
+    align-self: flex-end;
+}
+.imagenesPacman{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+
+}
+.botonIniciar{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-button);
+    border: none;
+    cursor: pointer;
+}
+.triangulo{
+    
+    margin-left:  10px;
+    width: 50px;
+    height: 50px;
+    clip-path: polygon(100% 53%, 0 0, 0 100%);
+    background-color: #fff;
+}
