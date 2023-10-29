@@ -1,0 +1,114 @@
+
+@media (max-width: 768px) {
+    
+    body{
+        background-color: #00063D;
+        margin: 0;
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+
+
+    }
+    .container{
+        aspect-ratio: 430 / 856;
+        display: grid;
+        background-image: url(laberinto.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        grid-template-rows: repeat(10, 1fr); 
+        grid-template-columns: repeat(6, 1fr); 
+        grid-gap: 32px; 
+        border: 32px solid #000C7A;
+        border-radius:16px;
+        min-width: 100%;
+
+    }
+    .pacman {
+        width: 120px;
+        height: 120px;
+        background-image: url('pacman.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 16px;
+
+        grid-row: 3;
+        grid-column: 4; 
+    }
+
+    .fantasma1 {
+        width: 120px;
+        height: 120px;
+        background-image: url('fantasma1.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+        margin-top: 8px;
+    }
+    .fantasma2 {
+        width: 120px;
+        height: 120px;
+        background-image: url('fantasma2.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+        margin-top: 8px;
+    }
+    .fantasma3 {
+        width: 120px;
+        height: 120px;
+        background-image: url('fantasma3.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: scaleX(-1);
+        margin: 0 auto;
+        margin-top: 8px;
+    }
+    .fantasma4 {
+        width: 120px;
+        height: 120px;
+        background-image: url('fantasma4.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: scaleX(-1);
+        margin: 0 auto;
+        margin-top: 8px;
+    }
+    .inferior {
+        display: flex;
+        flex-direction: row; 
+
+    }
+
+    .atras, .matar{
+        color: white;
+        padding: 16px;
+        font-size: 48px;
+        background-color: #1F35FF;
+        border-radius: 48px;
+        text-align: center;
+        width: 180px;
+        height: 48px;
+        cursor: pointer;
+
+    }
+    .atras {
+        margin-right: auto; 
+    }
+
+
+
+    .matar {
+        margin-left: auto; 
+    }
+
+    .logo{
+        width: 300px;
+        height: 100px;
+        background-image: url('Logo.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+        margin-top: 8px;
+    }
+}
