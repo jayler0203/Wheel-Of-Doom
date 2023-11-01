@@ -96,6 +96,12 @@ ul{
     font-weight: 400;
 }
 
+.centerList{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
 .trash {
     margin: 10px;
     background-color: #00063d;

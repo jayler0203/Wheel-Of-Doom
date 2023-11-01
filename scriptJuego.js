@@ -1,5 +1,7 @@
 
 /* cordenadas de movimientos segun posicion de cada fantasma */
+import { listaDeNombres } from "./script";
+console.log ("cualquiera")
 const movimientos1 = [
     { columna: 2, fila: 1},
     { columna: 2, fila: 3},
@@ -54,9 +56,9 @@ function ocultarFantasma(movimientos, numeroFantasma) {
 }
 
 /* funcion que elige un participante aleatorio de la lista creada por el usuario */
-function nombreAleatorio(){
-    let jugadores= cargarLista();
-    let indice= Math.floor(Math.random()*jugadores.length);
+function nombreAleatorio() {
+    let jugadores = listaDeNombres;
+    let indice = Math.floor(Math.random()*jugadores.length);
     let jugadorElimindo = jugadores[indice];
     return jugadorElimindo;
 }

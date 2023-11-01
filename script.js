@@ -1,7 +1,7 @@
 const input = document.getElementById("inputName");
 const lista = document.getElementById("listNames");
 const agregar = document.getElementById("add");
-let listaDeNombres = [];
+export let listaDeNombres = [];
 console.log(localStorage.getItem("nombres"));
 cargarLista();
 agregar.addEventListener("click", agregarNuevoNombre);
@@ -15,8 +15,11 @@ function agregarNuevoNombre() {
   limpiarInput();
 }
 function agregarNombreLista(texto, idName) {
-  const nombre = `<li>${texto}</li> <span class="material-symbols-outlined trash" id="${idName}">delete</span>`;
+  const nombre = `<li>${texto}</li>  <span class="trash" id="${idName}">
+  <img src="imagenes/trash.min.png" alt="">
+  </span>`;
   const container = document.createElement("div");
+  container.classList.add("centerList")
   container.innerHTML = nombre;
   lista.appendChild(container);
   const deleteButton = document.getElementById(idName);

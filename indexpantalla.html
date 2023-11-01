@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="script.js" type="module" defer></script>
     <title>Wheel of Doom</title>
 </head>
 <body>
@@ -17,22 +17,20 @@
         </div>
 
         <div>
-            <input type="text" class="names" placeholder="Nombre del fantasma">
-            <button onclick="" class="agregar">
+            <input type="text" class="names" placeholder="Nombre del fantasma" id="inputName">
+            <button onclick="" class="agregar" id="add">
                 +
             </button>
         </div>
 
         <div>
-            <ul class="namesLista">
-                <li>Pacman
-                    <span class="trash">
-                    <img src="imagenes/trash.min.png" alt="">
-                    </span>
-                </li>
+            <ul class="namesLista" id="listNames">
+                
             </ul>
         <div>
-            <button class="botonIniciar2"> INICIAR </button>
+            <a href="indexJuego.html">
+                <button class="botonIniciar2" > INICIAR </button>
+            </a>
         </div>
     </section>
 </body>
