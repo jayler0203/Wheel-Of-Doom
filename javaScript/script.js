@@ -1,12 +1,10 @@
 const input = document.getElementById("inputName");
 const lista = document.getElementById("listNames");
-const agregar = document.getElementById("add");
 export let listaDeNombres = [];
 console.log(localStorage.getItem("nombres"));
-cargarLista();
-agregar.addEventListener("click", agregarNuevoNombre);
+
 //
-function agregarNuevoNombre() {
+export function agregarNuevoNombre() {
   let texto = input.value;
   let idName = crypto.randomUUID();
   listaDeNombres.push({ name: texto, idName: idName });
@@ -25,7 +23,14 @@ function agregarNombreLista(texto, idName) {
   const deleteButton = document.getElementById(idName);
   deleteButton.addEventListener("click", () => eliminarNombreDOM(idName));
 }
-function cargarLista() {
+export function obtenerLista(){
+  if (localStorage.getItem("nombres")) {
+    listaDeNombres = JSON.parse(localStorage.getItem("nombres"));
+    return listaDeNombres
+}
+}
+
+export function cargarLista() {
   if (localStorage.getItem("nombres")) {
     listaDeNombres = JSON.parse(localStorage.getItem("nombres"));
     // Llenar la lista con los nombres guardados.
@@ -35,15 +40,16 @@ function cargarLista() {
     });
   }
 }
-function guardarLista() {
+export function guardarLista() {
   // Guardar la lista de nombres en el localStorage.
   localStorage.setItem("nombres", JSON.stringify(listaDeNombres));
 }
 
-function eliminarNombreLista(idName) {
+export function eliminarNombreLista(idName) {
   listaDeNombres = listaDeNombres.filter(
     (nombreObj) => nombreObj.idName !== idName
   );
+
 }
 function eliminarNombreDOM(idName) {
   const elementToRemove = document.getElementById(idName);

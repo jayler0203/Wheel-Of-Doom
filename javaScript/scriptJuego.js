@@ -1,9 +1,10 @@
 
 /* cordenadas de movimientos segun posicion de cada fantasma */
-import {listaDeNombres} from "./script.js";
+import {obtenerLista,eliminarNombreLista, guardarLista} from "./script.js";
 const boton = document.getElementById("matar")
 boton.addEventListener("click", moverElementoSecuencia)
-console.log ("cualquiera")
+let listaDeNombres = obtenerLista();
+console.log (obtenerLista())
 const movimientos1 = [
     { columna: 2, fila: 1},
     { columna: 2, fila: 3},
@@ -50,18 +51,19 @@ function ocultarFantasma(movimientos, numeroFantasma) {
     ) {
         const fantasma = document.getElementById(`fantasma${numeroFantasma}`);
         fantasma.style.display = "none";
-        let nombre = nombreAleatorio();
+        let nombre = nombreAleatorio(listaDeNombres);
         mostrarMensaje(nombre.name);
 
         eliminarNombreLista(nombre.idName);
+        guardarLista()
     }
 }
 
 /* funcion que elige un participante aleatorio de la lista creada por el usuario */
-function nombreAleatorio() {
-    let jugadores = listaDeNombres;
-    let indice = Math.floor(Math.random()*jugadores.length);
-    let jugadorElimindo = jugadores[indice];
+function nombreAleatorio(listaDeNombres) {
+    
+    let indice = Math.floor(Math.random()*listaDeNombres.length);
+    let jugadorElimindo = listaDeNombres[indice];
     return jugadorElimindo;
 }
 
@@ -135,7 +137,7 @@ let contador = 0
 export function moverElementoSecuencia() {
 
     let y = listas[contador]
-    for  (x of y) {
+    for  (let x of y) {
         mover(y);
             
     }
