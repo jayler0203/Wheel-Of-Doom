@@ -1,6 +1,8 @@
 
 /* cordenadas de movimientos segun posicion de cada fantasma */
-import { listaDeNombres } from "./script";
+import {listaDeNombres} from "./script.js";
+const boton = document.getElementById("matar")
+boton.addEventListener("click", moverElementoSecuencia)
 console.log ("cualquiera")
 const movimientos1 = [
     { columna: 2, fila: 1},
@@ -130,7 +132,7 @@ function mover(go) {
 
 /* Funcion que recorre la lista de las coordenadas y ejecuta la funcion mover para que recorra una despues de otra */
 let contador = 0
-function moverElementoSecuencia() {
+export function moverElementoSecuencia() {
 
     let y = listas[contador]
     for  (x of y) {
