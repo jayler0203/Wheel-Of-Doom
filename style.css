@@ -1,5 +1,6 @@
+/*Home*/
 :root{
-    --color-background:#00063D;
+    --color-background:#00063d;
     --color-button:#00A3FF;
 }
 body{
@@ -12,7 +13,7 @@ body{
     align-items: center;
     padding: 20px;
 }
-.tituloPacman{
+.tituloPacman{  
  width: 300px;
 }
 .killer{
@@ -23,7 +24,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:15px;
 
 }
 .botonIniciar{
@@ -39,10 +39,101 @@ body{
     cursor: pointer;
 }
 .triangulo{
-    
     margin-left:  10px;
     width: 50px;
     height: 50px;
     clip-path: polygon(100% 53%, 0 0, 0 100%);
     background-color: #fff;
 }
+
+/*Pantalla 2*/
+.pacmanPantalla2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagenes2 {
+    padding: 10px;
+}
+
+.names {
+    padding: 5px 129px 5px 10px;
+    margin: 50px 10px 20px 47.5px;
+    border-radius: 34px;
+    border: none;
+    background-color: #fff;
+}
+
+.agregar {
+    color: #fff;
+    padding: 5px 10px 5px 10px;
+    margin: 10px 10px 20px 6px;
+    border-radius: 36px;
+    background-color: #1F35FF;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+ul{
+    width: 308px;
+    height: 330px;
+    padding: 50px 10px 10px 40px;
+    margin: 0 auto;
+    border-radius: 31px;
+    border: 3px solid var(--Cian, #00a3ff);
+    padding-bottom: 10px;
+
+}
+
+.namesLista {
+    color: #fff;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.trash {
+    margin: 10px;
+    background-color: #00063d;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.botonIniciar2 {
+    padding: 10px;
+    margin: 20px auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 36px;
+    background-color: var(--Azul-Fondo--30, #1f35ff);
+    transition: all 0.3s ease;
+    border: none;   
+    cursor: pointer;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.agregar:hover {
+    box-shadow: 0 0.1rem 0.4rem #e4e017;
+}
+
+.trash:hover {
+    box-shadow: 0 0.1rem 0.4rem #e4e017;
+}
+
+.botonIniciar2:hover {
+    box-shadow: 0 0.1rem 0.4rem #e4e017;
+}
+
