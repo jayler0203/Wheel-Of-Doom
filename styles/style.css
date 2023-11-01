@@ -5,9 +5,13 @@
 }
 body{
     background: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 .titulo{
+    max-width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,6 +28,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 
 }
 .botonIniciar{
@@ -44,6 +49,41 @@ body{
     height: 50px;
     clip-path: polygon(100% 53%, 0 0, 0 100%);
     background-color: #fff;
+}
+/*Responsive home*/
+@media(width >= 992px){
+    body{
+
+        gap: 100px;
+    }
+    .imagenesPacman{
+        flex-direction: row;
+        justify-content: center;
+        gap: 28px;
+    }
+    .imagenesPacman img{
+        width: 121px;
+        height: 121px;
+    }
+    .pacman{
+        transform: rotate(270deg);
+
+    }
+    .titulo{
+        max-width: 500px;
+    }
+    .tituloPacman{
+        width: 450px;
+    }
+    .killer{
+        width: 220px;
+    }
+    .botonIniciar{
+        width: 110px;
+        height: 110px;
+
+
+    }
 }
 
 /*Pantalla 2*/
