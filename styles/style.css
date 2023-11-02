@@ -11,7 +11,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 100px
+    gap: 28px
 }
 
 .titulo{
@@ -74,6 +74,7 @@ body{
     }
     .titulo{
         max-width: 500px;
+        margin: 0 auto;
     }
     .tituloPacman{
         width: 450px;
@@ -99,10 +100,14 @@ body{
 .imagenes2 {
     padding: 10px;
 }
-
+.addJugador{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .names {
     padding: 5px 129px 5px 10px;
-    margin: 50px 10px 20px 47.5px;
+    margin: 30px 10px;
     border-radius: 34px;
     border: none;
     background-color: #fff;
@@ -111,7 +116,7 @@ body{
 .agregar {
     color: #fff;
     padding: 4px 10px 7px 10px;
-    margin: 10px 50px 20px 10px;
+    margin: 30px 10px;
     border-radius: 36px;
     background-color: #1F35FF;
     transition: all 0.3s ease;
