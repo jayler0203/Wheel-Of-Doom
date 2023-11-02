@@ -1,8 +1,9 @@
 let boton = document.getElementById("play");
-let sonido = new Audio ("sonidos/donkey-kong-coin.mp3")
+let sonido = new Audio ("./sonidos/donkey-kong-coin.mp3")
 console.log (sonido, boton)
 
-boton.addEventListener("onclick", function(){sonido.play()})
+boton.addEventListener("click", function(){sonido.play()})
+sonido.addEventListener("ended", function(){window.location.href="indexpantalla.html"})
 
 
 /*
@@ -14,7 +15,7 @@ boton.addEventListener("onclick", function(){sonido.play()})
 */
 
 
-
+/*
 let soundEnabled = true;
 
 function toggleSound() {
@@ -41,3 +42,4 @@ function toggleSound() {
         soundButton.textContent = "🔇 Mute";
     }
 }
+*/
