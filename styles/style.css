@@ -5,11 +5,15 @@
 }
 body{
     background: var(--color-background);
+}
+
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    gap: 100px
 }
+
 .titulo{
     max-width: 320px;
     display: flex;
@@ -52,8 +56,7 @@ body{
 }
 /*Responsive home*/
 @media(width >= 992px){
-    body{
-
+    .container{
         gap: 100px;
     }
     .imagenesPacman{
@@ -107,12 +110,13 @@ body{
 
 .agregar {
     color: #fff;
-    padding: 5px 10px 5px 10px;
-    margin: 10px 10px 20px 6px;
+    padding: 4px 10px 7px 10px;
+    margin: 10px 50px 20px 10px;
     border-radius: 36px;
     background-color: #1F35FF;
     transition: all 0.3s ease;
     text-align: center;
+    align-items: center;
     border: none;
     cursor: pointer;
 }
@@ -183,3 +187,94 @@ ul{
     box-shadow: 0 0.1rem 0.4rem #e4e017;
 }
 
+/*@media (max-width:600px)*/
+@media(max-width:480px){
+    body{
+        gap: 100px;
+    }
+
+    .pacmanPantalla2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .imagenes2 {
+        padding: 10px;
+    }
+    
+    .names {
+        padding: 5px 50px 5px 10px;
+        margin: 50px 10px 20px 30px;
+        border-radius: 34px;
+        border: none;
+        background-color: #fff;
+    }
+    
+    .agregar {
+        color: #fff;
+        padding: 4px 10px 7px 10px;
+        margin: 10px 32px 20px 10px;
+        border-radius: 36px;
+        background-color: #1F35FF;
+        transition: all 0.3s ease;
+        text-align: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+    }
+    
+    ul{
+        width: 245px;
+        height: 330px;
+        padding: 50px 10px 10px 40px;
+        margin: 0 auto;
+        border-radius: 31px;
+        border: 3px solid var(--Cian, #00a3ff);
+        padding-bottom: 10px;
+    
+    }
+    
+    .namesLista {
+        color: #fff;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+    }
+    
+    .centerList{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .trash {
+        margin: 10px;
+        background-color: #00063d;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        
+    }
+    
+    .botonIniciar2 {
+        padding: 10px;
+        margin: 20px auto;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 36px;
+        background-color: var(--Azul-Fondo--30, #1f35ff);
+        transition: all 0.3s ease;
+        border: none;   
+        cursor: pointer;
+    }
+    
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
