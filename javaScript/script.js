@@ -1,20 +1,18 @@
 const input = document.getElementById("inputName");
 const lista = document.getElementById("listNames");
 export let listaDeNombres = [];
-console.log(localStorage.getItem("nombres"));
 
 //
 export function agregarNuevoNombre() {
   if (listaDeNombres.length <= 3) {
-    console.log(listaDeNombres.length)
+    console.log(listaDeNombres.length);
     let texto = input.value;
     let idName = crypto.randomUUID();
     listaDeNombres.push({ name: texto, idName: idName });
     agregarNombreLista(texto, idName);
-    guardarLista();
     limpiarInput();
   } else {
-    mostrarMensaje()
+    mostrarMensaje();
   }
   function mostrarMensaje() {
     const mensaje = document.createElement("div");
@@ -29,8 +27,8 @@ export function agregarNuevoNombre() {
     document.body.appendChild(mensaje);
     setTimeout(() => {
       mensaje.style.display = "none";
-      }, 2000); 
-}
+    }, 2000);
+  }
 }
 function agregarNombreLista(texto, idName) {
   const nombre = `<li>${texto}</li>  <span class="trash" id="${idName}">
@@ -42,16 +40,19 @@ function agregarNombreLista(texto, idName) {
   lista.appendChild(container);
   const deleteButton = document.getElementById(idName);
   deleteButton.addEventListener("click", () => eliminarNombreDOM(idName));
+  console.log(listaDeNombres);
+  guardarLista(listaDeNombres);
 }
 export function obtenerLista() {
-  if (localStorage.getItem("nombres")) {
+  let nombresGuardados = localStorage.getItem("nombres");
+  if (nombresGuardados && nombresGuardados !== "undefined") {
     listaDeNombres = JSON.parse(localStorage.getItem("nombres"));
-    return listaDeNombres;
-  }
+} return listaDeNombres
 }
 
 export function cargarLista() {
-  if (localStorage.getItem("nombres")) {
+  let nombresGuardados = localStorage.getItem("nombres");
+  if (nombresGuardados && nombresGuardados !== "undefined") {
     listaDeNombres = JSON.parse(localStorage.getItem("nombres"));
     // Llenar la lista con los nombres guardados.
     listaDeNombres.forEach((nombreObj) => {
@@ -59,23 +60,25 @@ export function cargarLista() {
       agregarNombreLista(name, idName);
     });
   }
+  return listaDeNombres;
 }
-export function guardarLista() {
+export function guardarLista(listaDeNombres) {
+  console.log(listaDeNombres)
   // Guardar la lista de nombres en el localStorage.
-  localStorage.setItem("nombres", JSON.stringify(listaDeNombres));
+ localStorage.setItem("nombres", JSON.stringify(listaDeNombres));
 }
 
-export function eliminarNombreLista(idName) {
-  listaDeNombres = listaDeNombres.filter(
+export function eliminarNombreLista(listaRestante, idName) {
+  let listaFinal = listaRestante.filter(
     (nombreObj) => nombreObj.idName !== idName
   );
+  return listaFinal;
 }
 function eliminarNombreDOM(idName) {
   const elementToRemove = document.getElementById(idName);
   elementToRemove.parentNode.remove(elementToRemove);
-  eliminarNombreLista(idName);
+  listaDeNombres = eliminarNombreLista(listaDeNombres, idName);
   guardarLista();
-  console.log(listaDeNombres);
 }
 function limpiarInput() {
   input.value = "";
