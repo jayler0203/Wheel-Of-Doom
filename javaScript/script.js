@@ -10,6 +10,7 @@ export function agregarNuevoNombre() {
     let idName = crypto.randomUUID();
     listaDeNombres.push({ name: texto, idName: idName });
     agregarNombreLista(texto, idName);
+    
     limpiarInput();
   } else {
     mostrarMensaje();
